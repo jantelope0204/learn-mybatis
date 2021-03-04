@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.teacher.TeacherMapper">
+    <!--namespace=绑定一个指定的Dao/Mapper接口-->
+    <!--结果集映射  数据库字段与java字段不一致的时候 映射-->
+
+
+</mapper>
