@@ -1,7 +1,9 @@
 package com.test;
 
 import com.mapper.UserMapper;
+import com.mapper.blog.BlogMapper;
 import com.mapper.student.StudentMapper;
+import com.pojo.Blog;
 import com.pojo.Student;
 import com.pojo.User;
 import com.utils.MybatisUtils;
@@ -9,7 +11,9 @@ import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MyTest {
     @Test
@@ -59,5 +63,20 @@ public class MyTest {
         }
         //关闭sqlSession
         sqlSession.close();
+    }
+    @Test
+    public void test4(){
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        BlogMapper blogMapper = sqlSession.getMapper(BlogMapper.class);
+        Map map = new HashMap<String,String>();
+        map.put("author","江");
+        map.put("title","好好学习");
+        List<Blog> blogs = blogMapper.queryBlogList(map);
+        for (Blog blog : blogs) {
+            System.out.println(blogs);
+        }
+        //关闭sqlSession
+        sqlSession.close();
+
     }
 }

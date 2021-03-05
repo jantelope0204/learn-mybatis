@@ -19,7 +19,7 @@
                      javaType="com.pojo.Teacher"
                      select="getTeacher"></association>
     </resultMap>
-
+<!--结果集嵌套-->
     <resultMap id="StudentTeacher2" type="com.pojo.Student">
         <result property="id" column="sid"></result>
         <result property="name" column="sname"></result>

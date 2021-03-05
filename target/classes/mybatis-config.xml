@@ -26,6 +26,7 @@
         <mapper resource="com/mapper/userMapper.xml" />
         <mapper resource="com/mapper/student/studentMapper.xml" />
         <mapper resource="com/mapper/teacher/teacherMapper.xml" />
+        <mapper resource="com/mapper/blog/blogMapper.xml" />
     </mappers>
 
 </configuration>

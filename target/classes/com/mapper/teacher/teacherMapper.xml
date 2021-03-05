@@ -5,6 +5,20 @@
 <mapper namespace="com.mapper.teacher.TeacherMapper">
     <!--namespace=绑定一个指定的Dao/Mapper接口-->
     <!--结果集映射  数据库字段与java字段不一致的时候 映射-->
+    <resultMap id="teacherList" type="com.pojo.Teacher">
+        <result column="tid" property="id" />
+        <result column="tname" property="name"/>
+        <collection property="students" ofType="com.pojo.Student">
+            <result property="id" column="sid"/>
+            <result property="name" column="sname"/>
+        </collection>
+    </resultMap>
+
+    <select id="getTeacher" resultMap="teacherList">
+        select s.id sid, s.name sname, t.name tname, t.id tid
+        from student s, teacher t
+        where s.tid = t.id and t.id = #{id};
+    </select>
 
 
 </mapper>
